@@ -119,6 +119,9 @@ ramips_board_name() {
 	*"MoFi Network MOFI3500-3GN")
 		name="mofi3500-3gn"
 		;;
+	*"MPR-A1")
+		name="mpr-a1"
+		;;
 	*"NBG-419N")
 		name="nbg-419n"
 		;;

@@ -506,6 +506,10 @@ define Image/Build/Profile/MOFI35003GN
 	$(call Image/Build/Template/$(fs_squash)/$(1),GENERIC_8M,mofi3500-3gn,MOFI3500-3GN,ttyS1,57600,phys)
 endef
 
+define Image/Build/Profile/MPR_A1
+	$(call Image/Build/Template/$(fs_squash)/$(1),GENERIC_4M,mpr-a1,MPR-A1,ttyS1,57600,spi)
+endef
+
 define Image/Build/Profile/NBG419N
 	$(call Image/Build/Template/$(fs_squash)/$(1),GENERIC_4M,nbg-419n,NBG-419N,ttyS1,57600,phys)
 endef
@@ -613,6 +617,7 @@ define Image/Build/Profile/Default
 	$(call Image/Build/Profile/HW5503G,$(1))
 	$(call Image/Build/Profile/MOFI35003GN,$(1))
 	$(call Image/Build/Profile/NBG419N,$(1))
+	$(call Image/Build/Profile/MPR_A1,$(1))
 	$(call Image/Build/Profile/NW718,$(1))
 	$(call Image/Build/Profile/OMNIEMB,$(1))
 	$(call Image/Build/Profile/PSR680W,$(1))

@@ -33,6 +33,7 @@ platform_check_image() {
 	freestation5 | \
 	hw550-3g | \
 	mofi3500-3gn | \
+	mpr-a1 | \
 	nbg-419n | \
 	nw718 | \
 	omni-emb | \

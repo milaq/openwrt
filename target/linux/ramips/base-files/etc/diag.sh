@@ -61,6 +61,9 @@ get_status_led() {
 	mofi3500-3gn)
 		status_led="mofi3500-3gn:green:status"
 		;;
+	mpr-a1)
+		status_led="mpr-a1:red:power"
+		;;
 	nbg-419n)
 		status_led="nbg-419n:green:power"
 		;;

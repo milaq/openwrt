@@ -26,6 +26,7 @@ obj-$(CONFIG_RT305X_MACH_FONERA20N)	+= mach-fonera20n.o
 obj-$(CONFIG_RT305X_MACH_FREESTATION5)  += mach-freestation5.o
 obj-$(CONFIG_RT305X_MACH_HW550_3G)	+= mach-hw550-3g.o
 obj-$(CONFIG_RT305X_MACH_MOFI3500_3GN)	+= mach-mofi3500-3gn.o
+obj-$(CONFIG_RT305X_MACH_MPR_A1)	+= mach-mpr-a1.o
 obj-$(CONFIG_RT305X_MACH_NBG_419N)	+= mach-nbg-419n.o
 obj-$(CONFIG_RT305X_MACH_NW718)		+= mach-nw718.o
 obj-$(CONFIG_RT305X_MACH_OMNI_EMB)	+= mach-omni-emb.o
