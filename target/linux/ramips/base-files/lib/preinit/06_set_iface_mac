@@ -34,6 +34,10 @@ preinit_set_mac_address() {
                 mac=$(ramips_get_mac_binary devdata 16388)
                 ifconfig eth0 hw ether $mac 2>/dev/null
                 ;;
+	dir-300-b5) 
+		mac=$(mtd_get_mac_ascii devdata 0 lanmac) 
+		ifconfig eth0 hw ether $mac 2>/dev/null 
+		;; 
 	dir-645)
 		mac=$(ramips_get_mac_nvram nvram lanmac)
 		mac=$(maccalc or "$mac" "02:00:00:00:00:00")

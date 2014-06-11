@@ -77,5 +77,6 @@ enum ramips_mach_type {
 	RAMIPS_MACH_TEW_692GR,		/* TRENDnet TEW-692GR */
 
 	/* RT5350 based machines */
-	RAMIPS_MACH_MPR_A1		/* HAME MPR-A1 */
+	RAMIPS_MACH_MPR_A1,		/* HAME MPR-A1 */
+	RAMIPS_MACH_DIR_300_B5         /* D-Link DIR-300 B5 */
 };

@@ -21,6 +21,7 @@ platform_check_image() {
 	bc2 | \
 	carambola | \
 	dir-300-b1 | \
+	dir-300-b5 | \
 	dir-600-b1 | \
 	dir-600-b2 | \
 	dir-615-h1 | \

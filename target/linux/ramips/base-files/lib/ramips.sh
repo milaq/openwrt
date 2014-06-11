@@ -80,6 +80,9 @@ ramips_board_name() {
 	*"DIR-300 B1")
 		name="dir-300-b1"
 		;;
+	*"DIR-300 B5") 
+		name="dir-300-b5" 
+		;; 
 	*"DIR-600 B1")
 		name="dir-600-b1"
 		;;

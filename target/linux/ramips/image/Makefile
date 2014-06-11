@@ -331,6 +331,21 @@ define BuildFirmware/DIR645/initramfs
 	$(call BuildFirmware/Generic/initramfs,$(1),$(2),$(call mkcmdline,$(3),$(4),$(5)) $(call mkmtd/$(6),$(mtdlayout_dir645a1)))
 endef
 
+mtdlayout_4M=192k(u-boot)ro,64k(u-boot-env)ro,64k(factory)ro,896k(kernel),2880k(rootfs),3776k@0x50000(firmware)
+
+mtdlayout_dir300b5=192k(u-boot)ro,64k(devdata)ro,64k(devconf)ro,896k(kernel),2880k(rootfs),3776k@0x50000(firmware) 
+mtd_dir300b5_kernel_part_size=917504 
+mtd_dir300b5_rootfs_part_size=2949120 
+define BuildFirmware/DIR300B5 
+	$(call BuildFirmware/Generic,$(1),$(2),$(call mkcmdline,$(3),$(4),$(5)) $(call mkmtd/$(6),$(mtdlayout_dir300b5)),917504,2949120,$(7),$(8)) 
+	mkwrgimg -s $(4) -d /dev/mtdblock/2 \
+		-i $(call sysupname,$(1),$(2)) \
+		-o $(call imgname,$(1),$(2))-factory.bin 
+endef 
+define BuildFirmware/DIR300B5/initramfs 
+	$(call BuildFirmware/Generic/initramfs,$(1),$(2),$(call mkcmdline,$(3),ttyS1,57600) $(call mkmtd/spi,$(mtdlayout_dir300b5)),$(mtd_dir300b5_kernel_part_size),$(mtd_dir300b5_rootfs_part_size)) 
+endef
+
 define BuildFirmware/UMedia
 	$(call BuildFirmware/GENERIC_8M,$(1),$(2),$(3),ttyS1,57600,phys)
 	if [ -e "$(call sysupname,$(1),$(2))" ]; then \
@@ -473,6 +488,10 @@ define Image/Build/Profile/DIR300B1
 	$(call Image/Build/Template/$(fs_squash)/$(1),DIR620A1,dir-620-a1,DIR-620-A1)
 endef
 
+define Image/Build/Profile/DIR300B5 
+	$(call Image/Build/Template/$(fs_squash)/$(1),DIR300B5,dir-300-b5,DIR-300-B5,ttyS1,57600,spi) 
+endef
+
 define Image/Build/Profile/DIR615H1
 	$(call Image/Build/Template/$(fs_squash)/$(1),DIR615H1,dir-615-h1,DIR-615-H1,ttyS1,57600,spi)
 	$(call Image/Build/Template/$(fs_squash)/$(1),DIR620D1,dir-620-d1,DIR-620-D1,ttyS1,57600,spi)
@@ -607,6 +626,7 @@ define Image/Build/Profile/Default
 	$(call Image/Build/Profile/BC2,$(1))
 	$(call Image/Build/Profile/CARAMBOLA,$(1))
 	$(call Image/Build/Profile/DIR300B1,$(1))
+	$(call Image/Build/Profile/DIR300B5,$(1))
 	$(call Image/Build/Profile/DIR615H1,$(1))
 	$(call Image/Build/Profile/DAP1350,$(1))
 	$(call Image/Build/Profile/ESR9753,$(1))

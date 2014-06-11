@@ -76,6 +76,11 @@ config RT305X_MACH_DIR_300_REVB
 	select RALINK_DEV_GPIO_BUTTONS
 	select RALINK_DEV_GPIO_LEDS
 
+config RT305X_MACH_DIR_300_REVB5 
+	bool "D-Link DIR-300 revB5 board support" 
+	select RALINK_DEV_GPIO_BUTTONS 
+	select RALINK_DEV_GPIO_LEDS
+
 config RT305X_MACH_DIR_615_H1
 	bool "D-Link DIR-615 H1 board support"
 	select RALINK_DEV_GPIO_BUTTONS

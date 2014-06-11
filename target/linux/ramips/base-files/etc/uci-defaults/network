@@ -170,6 +170,11 @@ ramips_setup_macs()
 		wan_mac=$(/usr/sbin/maccalc add "$lan_mac" 1)
 		;;
 
+	dir-300-b5) 
+		lan_mac=$(mtd_get_mac_ascii devdata lanmac) 
+		wan_mac=$(mtd_get_mac_ascii devdata wanmac) 
+		;; 
+
 	dir-620-a1)
 		lan_mac=$(ramips_get_mac_binary factory 4)
 		lan_mac=$(maccalc or "$lan_mac" "02:00:00:00:00:00")
