@@ -33,18 +33,11 @@ case "$FIRMWARE" in
 "RT3883.eeprom")
 	case $board in
 	dir-300-b1 | \
+	dir-300-b5 | \
 	dir-600-b1 | \
 	dir-600-b2 | \
 	dir-615-d)
 		rt2x00_eeprom_extract "devdata" 16384 512
-		;;
-
-	dir-300-b5) # This is not a binary eeprom, but the driver loads 
-		. /lib/functions.sh 
-		mac=$(mtd_get_mac_ascii devdata wlanmac) 
-		echo -n 1234 > /lib/firmware/$FIRMWARE 
-		macaddr_2bin $mac >> /lib/firmware/$FIRMWARE 
-		dd if=/dev/zero bs=1 count=262 >> /lib/firmware/$FIRMWARE 
 		;;
 
 	dap-1350)
