@@ -53,3 +53,14 @@ define Profile/DIR610A1/Description
 endef
 
 $(eval $(call Profile,DIR610A1))
+
+define Profile/DIR-300-B5
+	NAME:=Dlink DIR-300 B5
+	PACKAGES:=kmod-ledtrig-netdev kmod-ledtrig-timer
+endef
+
+define Profile/DIR-300-B5/Description
+	Package set for Dlink DIR-300 B5 board
+endef
+
+$(eval $(call Profile,DIR-300-B5))

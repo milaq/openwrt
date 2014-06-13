@@ -36,6 +36,7 @@ case "$FIRMWARE" in
 	dir-600-b1 | \
 	dir-600-b2 | \
 	dir-610-a1 | \
+	dir-300-b5 | \
 	dir-615-d)
 		rt2x00_eeprom_extract "devdata" 16384 512
 		;;
