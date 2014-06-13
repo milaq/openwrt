@@ -79,6 +79,9 @@ ramips_board_detect() {
 	*"DIR-300 B1")
 		name="dir-300-b1"
 		;;
+	*"DIR-300 B5")
+		name="dir-300-b5"
+		;;
 	*"DIR-300 B7")
 		name="dir-300-b7"
 		;;

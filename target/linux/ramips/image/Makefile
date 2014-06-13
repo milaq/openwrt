@@ -301,6 +301,8 @@ endif
 
 Image/Build/Profile/DIR610A1=$(call BuildFirmware/Seama/$(1),$(1),dir-610-a1,DIR-610-A1,wrgn59_dlob.hans_dir610,$(ralink_default_fw_size_4M))
 
+Image/Build/Profile/DIR-300-B5=$(call BuildFirmware/Seama/$(1),$(1),dir-300-b5,DIR-300-B5,wrgn59_dlob.hans_dir300b5,$(ralink_default_fw_size_4M))
+
 edimax_3g6200n_mtd_size=3735552
 Image/Build/Profile/3G6200N=$(call BuildFirmware/Edimax/$(1),$(1),3g-6200n,3G-6200N,$(edimax_3g6200n_mtd_size),CSYS,3G62,0x50000,0xc0000)
 
@@ -559,6 +561,7 @@ define Image/Build/Profile/Default
 	$(call Image/Build/Profile/D105,$(1))
 	$(call Image/Build/Profile/DIR-300-B1,$(1))
 	$(call Image/Build/Profile/DIR-600-B1,$(1))
+	$(call Image/Build/Profile/DIR-300-B5,$(1))
 	$(call Image/Build/Profile/DIR-300-B7,$(1))
 	$(call Image/Build/Profile/DIR-320-B1,$(1))
 	$(call Image/Build/Profile/DIR-600-B2,$(1))

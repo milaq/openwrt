@@ -32,6 +32,7 @@ platform_check_image() {
 	d105 | \
 	dcs-930 | \
 	dir-300-b1 | \
+	dir-300-b5 | \
 	dir-300-b7 | \
 	dir-320-b1 | \
 	dir-600-b1 | \
